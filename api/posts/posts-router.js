@@ -56,7 +56,29 @@ router.post("/", async (req, res) => {
       });
   }
 });
-router.put("/api/posts", (req, res) => {});
+
+router.put("/:id", async (req, res) => {
+  const { title, contents } = req.body;
+  const id = await Post.findById(req.params.id);
+  try {
+    if (!id) {
+      res
+        .status(404)
+        .json({ message: "The post with the specified ID does not exist" });
+    } else if (!title || !contents) {
+      return res
+        .status(400)
+        .json({ message: "Please provide title and contents for the post" });
+    } else {
+      //assumming that new information is valid =>
+      Post.update(req.params.id, req.body);
+    }
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "The post information could not be modified" });
+  }
+});
 router.delete("/api/posts", (req, res) => {});
 router.get("/api/posts/:id/messages", (req, res) => {});
 

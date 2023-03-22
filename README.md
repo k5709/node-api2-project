@@ -12,26 +12,27 @@ Your assignment page on Canvas should contain instructions for submitting this p
 
 ### Task 2: Minimum Viable Product
 
-- Add the code necessary to `index.js`, `api/server.js` and `api/posts/posts-router.js` to implement the endpoints listed below.
+<!-- - Add the code necessary to `index.js`, `api/server.js` and `api/posts/posts-router.js` to implement the endpoints listed below. -->
+
 - Separate the endpoints that begin with `/api/posts` into a separate Express Router inside `api/posts/posts-router.js`.
 - Configure the API to handle to the following routes. Some of these endpoints might require more than one call to the provided database helpers inside `api/posts/posts-model.js`.
 
-| N | Method | Endpoint                | Description                                                                                                                     |
-| - | ------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | GET    | /api/posts              | Returns **an array of all the post objects** contained in the database                                                          |
-| 2 | GET    | /api/posts/:id          | Returns **the post object with the specified id**                                                                               |
-| 3 | POST   | /api/posts              | Creates a post using the information sent inside the request body and returns **the newly created post object**                 |
-| 4 | PUT    | /api/posts/:id          | Updates the post with the specified id using data from the request body and **returns the modified document**, not the original |
-| 5 | DELETE | /api/posts/:id          | Removes the post with the specified id and returns the **deleted post object**                                                  |
-| 6 | GET    | /api/posts/:id/comments | Returns an **array of all the comment objects** associated with the post with the specified id                                  |
+| N   | Method | Endpoint                | Description                                                                                                                     |
+| --- | ------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | GET    | /api/posts              | Returns **an array of all the post objects** contained in the database                                                          |
+| 2   | GET    | /api/posts/:id          | Returns **the post object with the specified id**                                                                               |
+| 3   | POST   | /api/posts              | Creates a post using the information sent inside the request body and returns **the newly created post object**                 |
+| 4   | PUT    | /api/posts/:id          | Updates the post with the specified id using data from the request body and **returns the modified document**, not the original |
+| 5   | DELETE | /api/posts/:id          | Removes the post with the specified id and returns the **deleted post object**                                                  |
+| 6   | GET    | /api/posts/:id/comments | Returns an **array of all the comment objects** associated with the post with the specified id                                  |
 
-#### 1 [GET] /api/posts
+<!-- #### 1 [GET] /api/posts
 
 - If there's an error in retrieving the _posts_ from the database:
   - respond with HTTP status code `500`.
-  - return the following JSON: `{ message: "The posts information could not be retrieved" }`.
+  - return the following JSON: `{ message: "The posts information could not be retrieved" }`. -->
 
-#### 2 [GET] /api/posts/:id
+<!-- #### 2 [GET] /api/posts/:id
 
 - If the _post_ with the specified `id` is not found:
 
@@ -40,9 +41,9 @@ Your assignment page on Canvas should contain instructions for submitting this p
 
 - If there's an error in retrieving the _post_ from the database:
   - respond with HTTP status code `500`.
-  - return the following JSON: `{ message: "The post information could not be retrieved" }`.
+  - return the following JSON: `{ message: "The post information could not be retrieved" }`. -->
 
-#### 3 [POST] /api/posts
+<!-- #### 3 [POST] /api/posts
 
 - If the request body is missing the `title` or `contents` property:
 
@@ -57,9 +58,9 @@ Your assignment page on Canvas should contain instructions for submitting this p
 
 - If there's an error while saving the _post_:
   - respond with HTTP status code `500` (Server Error).
-  - return the following JSON: `{ message: "There was an error while saving the post to the database" }`.
+  - return the following JSON: `{ message: "There was an error while saving the post to the database" }`. -->
 
-#### 4 [PUT] /api/posts/:id
+<!-- #### 4 [PUT] /api/posts/:id
 
 - If the _post_ with the specified `id` is not found:
 
@@ -69,7 +70,7 @@ Your assignment page on Canvas should contain instructions for submitting this p
 - If the request body is missing the `title` or `contents` property:
 
   - respond with HTTP status code `400` (Bad Request).
-  - return the following JSON: `{ message: "Please provide title and contents for the post" }`.
+  - return the following JSON: `{ message: "Please provide title and contents for the post" }`. -->
 
 - If there's an error when updating the _post_:
 
