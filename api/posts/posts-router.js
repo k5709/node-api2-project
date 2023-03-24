@@ -66,7 +66,7 @@ router.put("/:id", async (req, res) => {
         .status(404)
         .json({ message: "The post with the specified ID does not exist" });
     } else if (!title || !contents) {
-      return res
+      res
         .status(400)
         .json({ message: "Please provide title and contents for the post" });
     } else {
@@ -80,6 +80,24 @@ router.put("/:id", async (req, res) => {
   }
 });
 router.delete("/api/posts", (req, res) => {});
-router.get("/api/posts/:id/messages", (req, res) => {});
+
+router.get("/:id/comments", async (req, res) => {
+  try {
+    const id = await Post.findById(req.params.id);
+    if (!id) {
+      res
+        .status(404)
+        .json({ message: "The post with the specified ID does not exist" });
+    } else {
+      const postComment = await Comment.findPostComments(req.params.id);
+      res.json(postComment);
+    }
+  } catch (error) {
+    res.status(500).json({
+      message: "The Comments information could not be retrieved",
+      error: error.message,
+    });
+  }
+});
 
 module.exports = router;
